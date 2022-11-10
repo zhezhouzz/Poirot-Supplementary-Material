@@ -33,7 +33,7 @@ The files are strcutured as the following:
 | Syntax | Figure 3  | mutual recursive defined as `value` and `tm` in file `CoreLang.v` |  |
 | Operaional semantcis | Figure 11 (supplementary materials)  | `step`in file `CoreLang.v` | `e --> v` |
 | Basic typing rules | Figure 12 (supplementary materials)  | mutual recursive defined as `has_type` and `value_hsa_type` in file `NormalTypeSystem.v` | `Gamma \N- t \vin T` and `Gamma \N- t \Tin T` |
-| Well fromedness typing rules | Figure 4  | `well_formed` in file `WellFormed,v`  | |
+| Well fromedness typing rules | Figure 4  | `well_formed` in file `WellFormed.v`  | |
 | Subtyping typing rules | Figure 4  | `is_subtype` in file `Subtyping.v`  | `Gamma \C- t1 \<: t2` |
 | Disjunction typing rules | Figure 4  | `disjunct` in file `TypeDisj.v` | `Gamma \C- t1 \tyor t2 \tyeq t3` |
 | Selected typing rules | Figure 5 (Figure 13 in supplementary materials shows full set of rules) | mutual recursive defined as `value_under_type_check` and `term_under_type_check` in file `TypingRules.v` | `Gamma \C- t \Vin T` and `Gamma \C- t \Tin T`|
@@ -53,7 +53,6 @@ The files are strcutured as the following:
 ## Axioms ##
 
 Our formalization relies on the axiom of excluded middle (`FunctionalExtensionality` and `PropExtensionality`) since we need to reasoning the equalty of refinement types that has qualifiers (deep embeded as Coq `Prop`). We also rely on the following assumptions, all of them are axioms we listed in the file `Ax.v`.
-    - The renaming assumptions (e.g., there exists a variable name that is not free in a term), there is no duplicate bindinsg in a state.
-    - The programs we type check always halt. We assume there exists a well-founded relation over all constants, used for the decreasing check of the typing rule of the fix-point function; if a term can reduce to a value, then they have the same basic type (it can be implied by the perservation property if the programs always halt).
-    - Some syntax equivelence fact of our core language, for example `let x = e_x in x` is equal to `e_x`. 
-- 
+- The renaming assumptions (e.g., there exists a variable name that is not free in a term), there is no duplicate bindinsg in a state.
+- The programs we type check always halt. We assume there exists a well-founded relation over all constants, used for the decreasing check of the typing rule of the fix-point function; if a term can reduce to a value, then they have the same basic type (it can be implied by the perservation property if the programs always halt).
+- Some syntax equivelence fact of our core language, for example `let x = e_x in x` is equal to `e_x`.  
