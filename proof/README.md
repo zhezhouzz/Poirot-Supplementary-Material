@@ -17,7 +17,7 @@ The files are structured as follows:
   - `Maps.v`: Definitions and notations of program state.
   - `CoreLang.v`: Definitions and notations relevant to the syntax and operational semantics of our core language `λTG`.
   - `NormalTypeSystem.v`: Definitions and notations for a basic type system.
-  - `Ax.v`: The axioms and facts relevant to the operational semantcis.
+  - `Ax.v`: The axioms and facts relevant to the operational semantics.
 + Definitions and proofs for Poirot's type system.
   - `LinearContext.v`: Definitions and notations for reasoning about polymorphic contexts.
   - `RfTypeDef.v`: Definitions and notations of coverage types.
