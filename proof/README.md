@@ -1,5 +1,15 @@
 # Proof Readme #
 
+## Build ##
+
+- Coq version: `8.13.2`.
+- The project is orgnized by the coq make file `_CoqProject` under this folder.
+- Build command.
+
+```
+# make
+```
+
 ## File Structures ##
 
 The files are strcutured as the following:
