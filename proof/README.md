@@ -68,14 +68,14 @@ In addition, to simplify the syntax, all of them are unified to take two argumen
 ```
 match n with
 | 0 -> f 0
-| S n' -> f n' 
+| S n' -> g n' 
 ```
 
-can be implemted the following
+can be implemted as the following
 
 ```
 if n == 0 then f 0
-else f (n - 1)
+else g (n - 1)
 ```
 
 - In the formalization, we assume all program we checked are alpha-converted, which has no variables with the same name.
