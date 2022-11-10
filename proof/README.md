@@ -3,27 +3,27 @@
 ## File Structures ##
 
 The files are strcutured as the following:
-    + The parts that are indepdent from our coverage type system.
-        - `Maps.v`: The definitions and notations of the state, like Software Foundations.
-        - `CoreLang.v`: The definitions and notations of the syntax and operational semantcis of our core language `λTG`.
-        - `NormalTypeSystem.v`: The definitions and notations of the basic type system.
-        - `Ax.v`: The axioms and fact of the operational semantcis.
-    + The defintion of our coverage type system.
-        - `LinearContext.v`: The definitions and notations of a polymorphic context, impelemenetd as a list.
-        - `RfTypeDef.v`: The definitions and notations of coverage types.
-        - `NoDup.v`: Some tactics handling duplicate naming.
-        - `TypeClosed.v`: The definitions and notations the coverage types that is closed under context.
-        - `Denotation.v`: The definitions and notations the type denotation.
-        - `WellFormed.v`: The definitions and notations of well formedness typing rules.
-        - `CtxErase.v`: Some tactics transfer the coverage types to basic types.
-        - `TermMeet.v`: Auxlirary definitions, The meet (intersection) of terms
-        - `DenotationAux.v`: Some tactics for the type denotations.
-        - `TypeDisj.v`: The definitions and notations of disjunction typing rules.
-        - `DenotationSpecs.v`: Some tactics for the type denotations.
-        - `WellFormedSpecs.v`: Some tactics for the well formedness typing rules.
-        - `Subtyping.v`: The definitions and notations of the subtyping typing rules.
-        - `TypingRules.v`: The definitions and notations of the typing rules.
-        - `Soundness.v`: The proof the soundness theorem and corollary.
++ The parts that are indepdent from our coverage type system.
+  - `Maps.v`: The definitions and notations of the state, like Software Foundations.
+  - `CoreLang.v`: The definitions and notations of the syntax and operational semantcis of our core language `λTG`.
+  - `NormalTypeSystem.v`: The definitions and notations of the basic type system.
+  - `Ax.v`: The axioms and fact of the operational semantcis.
++ The defintion of our coverage type system.
+  - `LinearContext.v`: The definitions and notations of a polymorphic context, impelemenetd as a list.
+  - `RfTypeDef.v`: The definitions and notations of coverage types.
+  - `NoDup.v`: Some tactics handling duplicate naming.
+  - `TypeClosed.v`: The definitions and notations the coverage types that is closed under context.
+  - `Denotation.v`: The definitions and notations the type denotation.
+  - `WellFormed.v`: The definitions and notations of well formedness typing rules.
+  - `CtxErase.v`: Some tactics transfer the coverage types to basic types.
+  - `TermMeet.v`: Auxlirary definitions, The meet (intersection) of terms
+  - `DenotationAux.v`: Some tactics for the type denotations.
+  - `TypeDisj.v`: The definitions and notations of disjunction typing rules.
+  - `DenotationSpecs.v`: Some tactics for the type denotations.
+  - `WellFormedSpecs.v`: Some tactics for the well formedness typing rules.
+  - `Subtyping.v`: The definitions and notations of the subtyping typing rules.
+  - `TypingRules.v`: The definitions and notations of the typing rules.
+  - `Soundness.v`: The proof the soundness theorem and corollary.
 
 ## Paper-to-artifact Correspondence ##
 
