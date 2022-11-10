@@ -54,8 +54,30 @@ The files are strcutured as the following:
 ## Differences Between Paper and Artifact ##
 
 - In the formalization, we only have two base types: nat and bool, 
-- In the formalization, we only have four operators: `+`, `==`, `<`, `nat_gen`. To simplify the syntax, all of them are unified to take two arguments as input, the random nat generator takes two arbitray numbers as input.
-- In the formalization, to simplify the syntax, the patterm match can only patern match the bool variables.
+- In the formalization, we only have four operators: `+`, `==`, `<`, `nat_gen`. Other operators shown in the paper can be impelemenetd with them, for example, the minus operator can be defined as the funtion:
+
+```
+let minus (x: nat) (y: nat) =
+    let (diff: nat) = nat_gen () in
+    if x + diff == y then diff else err
+```
+
+In addition, to simplify the syntax, all of them are unified to take two arguments as input, the random nat generator takes two arbitray numbers as input.
+- In the formalization, to simplify the syntax, the patterm match can only pattern match the bool variables. The pattern matching over natural number
+
+```
+match n with
+| 0 -> f 0
+| S n' -> f n' 
+```
+
+can be implemted the following
+
+```
+if n == 0 then f 0
+else f (n - 1)
+```
+
 - In the formalization, we assume all program we checked are alpha-converted, which has no variables with the same name.
 - In the formalization, the substitution of refinement types are formalized into a state. It can help as to get rid of terminattion check of the fixpoint function in Coq when we define the logic relation.
 - In the formalization, our coverage typing rules addtionally requires the all branches of pattern matching expression are type safe in the basic type system (they may not consistent with the coverage type we want to check). It can help to gurantees the coverage typed program are also basic type safed.
