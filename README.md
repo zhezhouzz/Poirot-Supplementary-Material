@@ -6,8 +6,8 @@ The Coq formalization of our core language and the soundness theorem are given i
 
 ## Benchmarks
 
-- Details about the `14` benchmarks used in our evaluation are given in individual folders with the same name of the benchmark; these folders are all located under "benchmarks".
-Each benchmark has a file `prog.ml` that presents the source code of input test generator and a file `ty.ml` present the coverage type(s) that is to be verified, including the coverage type we want to check against (having the same name of the input test generator) and the coverage types of library functions (notated with `[@library]`). For example, there are three coverage types in `RedBlackTree\ty.ml`: two types that have name `int_gen` and `bool_gen` which are the types of library functions, one type has name `rbtree_gen` which is the type we want to check with the `rbtree_gen` program in `RedBlackTree\prog.ml`.
+- Details about the `14` benchmarks used in our evaluation are given in individual folders with the same name as the benchmark; these folders are all located under "benchmarks".
+Each benchmark has a file `prog.ml` that presents the source code of the input test generator and a file `ty.ml` that defines the coverage type coverage type we want to check the generator implementation against and the coverage types of various library functions (notated with `[@library]`) used by the implementation. For example, there are three coverage types in `RedBlackTree\ty.ml`: two types that have name `int_gen` and `bool_gen` which are the types of primitive generators used by the implementation, and one type named `rbtree_gen` which is the type we want to check with the `rbtree_gen` program in `RedBlackTree\prog.ml`.
 
 - The directory `synthesizer_input` contains the input specification files for the `5` benchmarks for which we synthesized generators (shown in Figure 9). For E.g. the file `synthesizer_input\sizedBST.spec` is passed to the synthesizer as input.
 
