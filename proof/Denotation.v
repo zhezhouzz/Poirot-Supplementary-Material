@@ -4,6 +4,7 @@ From CT Require Import CoreLang.
 From CT Require Import NormalTypeSystem.
 From CT Require Import LinearContext.
 From CT Require Import RfTypeDef.
+From CT Require Import TermMeet.
 From CT Require Import TypeClosed.
 From Coq Require Import Logic.FunctionalExtensionality.
 From Coq Require Import Logic.PropExtensionality.
@@ -19,6 +20,7 @@ Import LinearContext.
 Import RfTypeDef.
 Import TypeClosed.
 Import NoDup.
+Import TermMeet.
 Import Ax.
 Import ListNotations.
 
@@ -592,7 +594,11 @@ Lemma step_preserve_ctx_denotation_over: forall Gamma (e e': tm),
 Proof with eauto.
   intros Gamma.
   induction Gamma; simpl; intros e e' Hts st tau He...
-  - inversion He; subst. inversion H; subst. constructor... eapply term_order_const_bound in Hts... subst...
+  - inversion He; subst. inversion H; subst. constructor...
+    destruct (exists_not_free_var_in_tm c).
+    assert (type_ctx_no_dup empty ((x, Oty tau)::nil)). constructor...
+    apply type_ctx_no_dup_implies_head_free in H1. apply l_find_right_most_none_neq_hd in H1. exfalso...
+  (* eapply term_order_const_bound with (v:=c) in Hts... subst... *)
   - inversion He; subst.
     + constructor...
       intros c_x Hc_xD. assert (tmR_in_ctx_aux (x |-> c_x; st) Gamma tau (tlete x c_x e)) as Hv1...
