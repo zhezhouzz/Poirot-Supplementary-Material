@@ -67,15 +67,15 @@ In addition, to simplify the syntax, all operators take two input arguments; e.g
 
 ```
 match n with
-| 0 -> f 0
-| S n' -> g n'
+| 0 -> e1
+| S n' -> e2
 ```
 
 is implemented as follows:
 
 ```
-if n == 0 then f 0
-else g (n - 1)
+if n == 0 then e1
+else let n' = n - 1 in e2
 ```
 
 - We assume all input programs are alpha-converted, such that all variables have unique names.
